@@ -1,0 +1,24 @@
+appId: com.notx
+name: 05 · İngilis dili (onboarding → UI)
+tags:
+  - smoke
+---
+- stopApp
+- clearState
+- launchApp
+- extendedWaitUntil:
+    visible: "(?s).*English.*"
+    timeout: 30000
+- tapOn: "(?s).*English.*"
+- tapOn: "(?s).*Continue.*"
+# Ana ekran ingilis dilində
+- assertVisible: "(?s).*Create your first note.*"
+- assertVisible: "(?s).*Start recording.*"
+- takeScreenshot: 05-english-home
+# Parametrlər də ingiliscə
+- tapOn: "(?s).*Settings.*"
+- assertVisible: "(?s).*Interface language.*"
+- assertVisible: "(?s).*Theme.*"
+- takeScreenshot: 05-english-settings
+- back
+- assertVisible: "(?s).*Create your first note.*"
