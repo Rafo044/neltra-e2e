@@ -1,0 +1,26 @@
+appId: com.notx
+name: 03 · Arayüz dili AZ → TR
+tags:
+  - smoke
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "(?s).*Azərbaycanca.*"
+    timeout: 30000
+- tapOn: "(?s).*Azərbaycanca.*"
+- tapOn: "(?s).*Davam et.*"
+- tapOn: "(?s).*Parametrlər.*"
+- tapOn: "(?s).*Arayüz dili.*"
+- assertVisible: "(?s).*Türkçe.*"
+- tapOn: "(?s).*Türkçe.*"
+# Lokal dəyişdi — Parametrlər → Ayarlar
+- assertVisible: "(?s).*Ayarlar.*"
+- takeScreenshot: 03-lang-tr
+- back
+- assertVisible: "(?s).*İlk kaydını oluştur.*"
+# Yenidən AZ-a qaytar (state çirklənməsin)
+- tapOn: "(?s).*Ayarlar.*"
+- tapOn: "(?s).*Arayüz dili.*"
+- tapOn: "(?s).*Azərbaycanca.*"
+- assertVisible: "(?s).*Parametrlər.*"

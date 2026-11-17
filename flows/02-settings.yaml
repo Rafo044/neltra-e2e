@@ -1,0 +1,22 @@
+appId: com.notx
+name: 02 · Parametrlər açılır
+tags:
+  - smoke
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "(?s).*Azərbaycanca.*"
+    timeout: 30000
+- tapOn: "(?s).*Azərbaycanca.*"
+- tapOn: "(?s).*Davam et.*"
+- assertVisible: "(?s).*İlk qeydini yarat.*"
+# Header-dəki settings düyməsi (tooltip → contentDescription "Parametrlər")
+- tapOn: "(?s).*Parametrlər.*"
+- assertVisible: "(?s).*Arayüz dili.*"
+- assertVisible: "(?s).*Qeyd dili.*"
+- assertVisible: "(?s).*Audio saxlanması.*"
+- assertVisible: "(?s).*Məxfilik siyasəti.*"
+- takeScreenshot: 02-settings
+- back
+- assertVisible: "(?s).*İlk qeydini yarat.*"

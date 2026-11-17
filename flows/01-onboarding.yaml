@@ -1,0 +1,19 @@
+appId: com.notx
+name: 01 · Onboarding (AZ)
+tags:
+  - smoke
+---
+- launchApp:
+    clearState: true
+# Soyuq start: ilk kadr bir neçə saniyə gecikə bilər.
+- extendedWaitUntil:
+    visible: "Dilini seç"
+    timeout: 30000
+# Flutter kartı bütün mətnləri bir accessibility node-unda birləşdirir
+# ("AZ\nAzərbaycanca\nAZ arayüz · AZ transkript") → sətir keçidi üçün (?s).
+- tapOn: "(?s).*Azərbaycanca.*"
+- tapOn: "(?s).*Davam et.*"
+# Ana ekran: boş kitabxana + qeyd CTA
+- assertVisible: "(?s).*İlk qeydini yarat.*"
+- assertVisible: "(?s).*Qeyd dili.*"
+- takeScreenshot: 01-home
