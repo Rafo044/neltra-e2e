@@ -13,7 +13,9 @@ tags:
 # ("AZ\nAzərbaycanca\nAZ arayüz · AZ transkript") → sətir keçidi üçün (?s).
 - tapOn: "(?s).*Azərbaycanca.*"
 - tapOn: "(?s).*Davam et.*"
-# Ana ekran: boş kitabxana + qeyd CTA
+# Ana ekran: boş kitabxana + qeyd CTA. Dil kontrolları artıq burada deyil (#83).
 - assertVisible: "(?s).*İlk qeydini yarat.*"
-- assertVisible: "(?s).*Qeyd dili.*"
+- assertVisible: "(?s).*Qeydə başla.*"
+- assertVisible: "(?s).*Bu ay .*qalıb.*"
+- assertNotVisible: "(?s).*Dil AZ.*"
 - takeScreenshot: 01-home
