@@ -3,8 +3,9 @@ name: 01 · Onboarding (AZ)
 tags:
   - smoke
 ---
-- launchApp:
-    clearState: true
+- stopApp
+- clearState
+- launchApp
 # Soyuq start: ilk kadr bir neçə saniyə gecikə bilər.
 - extendedWaitUntil:
     visible: "Dilini seç"

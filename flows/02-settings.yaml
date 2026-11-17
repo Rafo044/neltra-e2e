@@ -3,8 +3,9 @@ name: 02 · Parametrlər açılır
 tags:
   - smoke
 ---
-- launchApp:
-    clearState: true
+- stopApp
+- clearState
+- launchApp
 - extendedWaitUntil:
     visible: "(?s).*Azərbaycanca.*"
     timeout: 30000
