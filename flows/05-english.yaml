@@ -10,6 +10,8 @@ tags:
     visible: "(?s).*English.*"
     timeout: 30000
 - tapOn: "(?s).*English.*"
+# Seçimdən dərhal sonra UI ingiliscəyə keçir (preview)
+- assertVisible: "(?s).*Choose your language.*"
 - tapOn: "(?s).*Continue.*"
 # Ana ekran ingilis dilində
 - assertVisible: "(?s).*Create your first note.*"
